@@ -14,6 +14,21 @@ public class cipan {
         String arrto = Arrays.toString(strs);
         System.out.println(arrto);
 
+        for (int m = 0;m<n-1;m++){
+            for(int k=m+1;k<n-1;k++){
+                String temp = "";
+
+                if (format(strs[m])>=format(strs[k])){
+                    temp =strs[m];
+                    strs[m] = strs[k];
+                    strs[k] = temp;
+                }
+
+            }
+        }
+
+        System.out.println(Arrays.toString(strs));
+
 
 
 
