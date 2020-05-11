@@ -9,7 +9,7 @@ public class nmcount {
 
         int k = jisuan(n,m);
 
-        System.out.println(k);
+        System.out.println("总数"+k);
 
     }
 
@@ -20,6 +20,7 @@ public class nmcount {
 
         int count_tatol = 0;
         for (int i=1;i<=n;i++){
+            System.out.println("数字"+i+"包含*****"+cout(i,m)+"*****个"+m);
             count_tatol+=cout(i,m);
 
         }
@@ -29,17 +30,16 @@ public class nmcount {
     }
 
     private static int cout(int i,int m){
-        int cout1 = 0;
-        if ((i/10) != 0){
-            if (i%10 ==m){
-                cout1++;
+        int couts = 0;
+        for (;i>0;i=i/10){
+            if((i%10)==m){
+                ++couts;
             }
-        }else{
-            i = i/10;
-            cout(i,m);
+//            System.out.println(couts);
+//            ++couts;
         }
 
-        return cout1;
+        return couts;
 
     }
 
